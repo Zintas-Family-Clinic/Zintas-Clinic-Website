@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Zintas Telehealth - Online Booking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css?v=20251207052100" />
+  <style>
+    /* Equal height and layout for detailed service cards */
+    .how-it-works .service-detail-card { display: flex; flex-direction: column; min-height: 520px; }
+    .how-it-works .service-detail-grid { align-items: stretch; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="brand brand-left">
+          <img src="logo.png" alt="Zintas Family Clinic" class="logo" />
+          <div class="brand-text">
+            <h1 class="brand-title">Zintas Family Clinic</h1>
+            <p class="brand-subtitle">Your family's health is our priority</p>
+          </div>
+        </div>
+        <div class="header-actions">
+          <a class="ehr-btn" href="https://phr.charmtracker.com/login.sas?FACILITY_ID=6da761489431a9742beb34b33845845661a3d1388e629a0b98ee2e5ce9d5cc8ac81b440bc8a53a00" target="_blank" rel="noopener noreferrer">
+            Patient Portal
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <img src="image 2.png" alt="Zintas Telehealth banner" style="width:100%; height:auto; border-radius:16px; margin-bottom:16px;" />
+        <div class="hero-text">
+          <h2 class="hero-title">Zintas Telehealth</h2>
+          <p class="hero-subtitle">Quality healthcare from the comfort of your home - Serving Arizona, Washington, Texas, New Mexico, and Colorado</p>
+          <a class="cta-btn" href="#booking">Book Appointment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview Section -->
+  <section class="features" id="services">
+    <div class="container">
+      <h2 class="section-title">Zintas Telehealth Services</h2>
+      <p class="section-subtitle">Comprehensive virtual care tailored to your needs</p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <title>Urgent Care</title>
+                <path d="M12 2 L12 22 M2 12 L22 12" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Urgent Care</h3>
+          <p class="price-badge">$45 per visit</p>
+          <p>Care for common illnesses and conditions. Age 5+.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <title>Weight Loss</title>
+                <path d="M10 3v7.2c0 .5-.2 1-.5 1.4l-2.7 3.3A3 3 0 0 0 10 21h4a3 3 0 0 0 3.2-6.1l-2.7-3.3c-.3-.4-.5-.9-.5-1.4V3" />
+                <path d="M9 3h6" />
+              </svg>
+            </div>
+          </div>
+          <h3>Weight Loss</h3>
+          <p class="price-badge">Starting at $39</p>
+          <p>FDA-approved options plus nutrition counseling.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <title>Men's Health</title>
+                <circle cx="12" cy="8" r="4"/>
+                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Men's Health</h3>
+          <p class="price-badge">$45 per visit</p>
+          <p>ED, hair loss, STD treatment and more.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <title>Women's Health</title>
+                <circle cx="12" cy="8" r="4"/>
+                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+                <path d="M12 12v3M10 13l2-1 2 1"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Women's Health</h3>
+          <p class="price-badge">$45 per visit</p>
+          <p>Vaginitis, STD care, HRT, birth control.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 24px; display: flex; gap: 12px; justify-content: center;">
+        <a class="cta-btn" href="#booking">Book Your Appointment</a>
+        <button id="toggleDetailsBtn" class="cta-btn-secondary" type="button" aria-controls="details" aria-expanded="false" onclick="toggleDetails()">Show more</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Services Section -->
+  <section class="how-it-works" id="details" aria-label="Detailed services" style="display: none;">
+    <div class="container">
+      <h2 class="section-title">Our Zintas Telehealth Services</h2>
+      
+      <div class="service-detail-grid" style="align-items: stretch;">
+        <!-- Urgent Care Card -->
+        <div class="service-detail-card" style="display:flex; flex-direction:column; min-height:520px;">
+          <div class="service-header">
+            <h3>Urgent Care</h3>
+            <span class="service-price">$45 / visit</span>
+          </div>
+          <p class="service-intro">Now accepting age 5 and up. Convenient, compassionate care for you.</p>
+
+          <button class="cta-btn-secondary" type="button" onclick="toggleCardDetails(this)" aria-expanded="false" style="align-self:flex-start; margin: 8px 0 12px;">Show details</button>
+          <div class="service-details" style="display:none;">
+            <h4>We Treat:</h4>
+            <ul class="service-list">
+              <li>Cold & Flu</li>
+              <li>Strep Throat</li>
+              <li>Seasonal Allergies</li>
+              <li>Acne</li>
+              <li>Asthma</li>
+              <li>Back Pain</li>
+              <li>COVID-19</li>
+              <li>Ear Infection</li>
+              <li>Eczema</li>
+              <li>Migraine</li>
+              <li>Sinus Infection</li>
+            </ul>
+          </div>
+
+          <a href="#booking" class="service-cta-btn" style="margin-top:auto;">Book Urgent Care Visit</a>
+        </div>
+
+        <!-- Weight Loss Card -->
+        <div class="service-detail-card" style="display:flex; flex-direction:column; min-height:520px;">
+          <div class="service-header">
+            <h3>Weight Loss Program</h3>
+            <span class="service-price">$39 - $75 / visit</span>
+          </div>
+          <p class="service-intro">FDA-approved medication for weight loss with tailored nutrition counseling.</p>
+
+          <button class="cta-btn-secondary" type="button" onclick="toggleCardDetails(this)" aria-expanded="false" style="align-self:flex-start; margin: 8px 0 12px;">Show details</button>
+          <div class="service-details" style="display:none;">
+            <h4>Initial Consultation - $39</h4>
+            <ul class="service-list">
+              <li>Complete whole health evaluation</li>
+              <li>Weight loss medication options review</li>
+              <li>Weight loss goal setting</li>
+              <li>Height, weight, blood pressure assessment</li>
+              <li>Lab orders when needed</li>
+              <li><strong>No prescription included with initial consultation</strong></li>
+            </ul>
+
+            <h4>Follow-Up Visit - $75</h4>
+            <ul class="service-list">
+              <li>Regular visit with clinician</li>
+              <li>Assess progress and medication adjustments</li>
+              <li>GLP-1 medication management</li>
+            </ul>
+
+            <p class="service-note"><strong>Recommended Duration:</strong> Minimum 3 months to maximum 12 month period for optimal weight loss journey.</p>
+          </div>
+
+          <a href="#booking" class="service-cta-btn" style="margin-top:auto;">Start Weight Loss Journey</a>
+        </div>
+
+        <!-- Women's Health Card -->
+        <div class="service-detail-card" style="display:flex; flex-direction:column; min-height:520px;">
+          <div class="service-header">
+            <h3>Women's Health</h3>
+            <span class="service-price">$45 / visit</span>
+          </div>
+          <p class="service-intro">Comprehensive women's healthcare via secure telehealth visits.</p>
+
+          <button class="cta-btn-secondary" type="button" onclick="toggleCardDetails(this)" aria-expanded="false" style="align-self:flex-start; margin: 8px 0 12px;">Show details</button>
+          <div class="service-details" style="display:none;">
+            <h4>Services Include:</h4>
+            <ul class="service-list">
+              <li>Vaginitis Treatment</li>
+              <li>STD Treatment</li>
+              <li>Hormone Replacement Therapy</li>
+              <li>Birth Control Consultation</li>
+            </ul>
+          </div>
+
+          <a href="#booking" class="service-cta-btn" style="margin-top:auto;">Book Women's Health Visit</a>
+        </div>
+
+        <!-- Men's Health Card -->
+        <div class="service-detail-card" style="display:flex; flex-direction:column; min-height:520px; margin: 0 auto; align-self: center;">
+          <div class="service-header">
+            <h3>Men's Health</h3>
+            <span class="service-price">$45 / visit</span>
+          </div>
+          <p class="service-intro">Confidential men's health care from home.</p>
+
+          <button class="cta-btn-secondary" type="button" onclick="toggleCardDetails(this)" aria-expanded="false" style="align-self:flex-start; margin: 8px 0 12px;">Show details</button>
+          <div class="service-details" style="display:none;">
+            <h4>Services Include:</h4>
+            <ul class="service-list">
+              <li>Erectile Dysfunction Treatment</li>
+              <li>Hair Loss Treatment</li>
+              <li>STD Treatment</li>
+            </ul>
+          </div>
+
+          <a href="#booking" class="service-cta-btn" style="margin-top:auto;">Book Men's Health Visit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title-white">About Zintas Telehealth</h2>
+      <p class="about-intro">Your health is our priority. We provide comprehensive, compassionate telehealth care for you and your family across Arizona, Washington, Texas, New Mexico, and Colorado.</p>
+      
+      <div class="about-features">
+        <div class="about-card">
+          <div class="about-icon">
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" aria-hidden="true" role="img" focusable="false">
+                <path d="M12 19 5.5 12.6a4.5 4.5 0 0 1 0-6.3 4.5 4.5 0 0 1 6.3 0L12 6l.2-.2a4.5 4.5 0 0 1 6.3 0 4.5 4.5 0 0 1 0 6.3Z" />
+              </svg>
+            </div>
+          </div>
+          <h3>Compassionate Care</h3>
+          <p>Warm, personalized healthcare for every patient</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" aria-hidden="true" role="img" focusable="false">
+                <circle cx="9" cy="8" r="2.8" />
+                <circle cx="15" cy="8" r="2.2" />
+                <path d="M3 21v-2.2A4.8 4.8 0 0 1 7.8 14h2.4A4.8 4.8 0 0 1 15 18.8V21" />
+                <path d="M17.2 14.2A4.2 4.2 0 0 1 21 18v3" />
+              </svg>
+            </div>
+          </div>
+          <h3>Family Focused</h3>
+          <p>Care across all ages and life stages</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" aria-hidden="true" role="img" focusable="false">
+                <path d="M12 3 14.2 9.4 21 10.1 16.4 14.2 17.6 21 12 17.3 6.4 21 7.6 14.2 3 10.1 9.8 9.4Z" />
+              </svg>
+            </div>
+          </div>
+          <h3>Expert Providers</h3>
+          <p>Experienced professionals you can trust</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" aria-hidden="true" role="img" focusable="false">
+                <circle cx="12" cy="12" r="6" />
+                <path d="M12 8v4l3 2" />
+              </svg>
+            </div>
+          </div>
+          <h3>Convenient Access</h3>
+          <p>Easy online booking & flexible times</p>
+        </div>
+      </div>
+      
+      <p class="about-description">At Zintas Telehealth, we believe that quality healthcare should be accessible to everyone. Our team of dedicated healthcare professionals is committed to helping you and your family achieve optimal health and wellness through personalized virtual care, modern technology, and a patient-first approach. We proudly serve patients in Arizona, Washington, Texas, New Mexico, and Colorado.</p>
+      <div style="text-align: center; margin-top: 30px;">
+        <a class="cta-btn" href="#booking">Schedule Your Telehealth Visit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <h2 class="section-title">What Our Patients Say</h2>
+      <p class="section-subtitle">Real stories from real patients who transformed their health with Zintas Telehealth</p>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <p class="testimonial-text">"The weight loss program at Zintas Telehealth has been life-changing! I've lost 35 pounds in 6 months with the support of Dr. Sintu and the amazing team. The video consultations make it so convenient!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SM</div>
+            <div class="author-info">
+              <h4>Sarah Mitchell</h4>
+              <p>Weight Loss Program Patient</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <p class="testimonial-text">"Best telehealth experience ever! The staff is incredibly caring and professional. Online booking is seamless, and I love that I can message my doctor anytime. Highly recommend Zintas Telehealth to anyone!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">JR</div>
+            <div class="author-info">
+              <h4>James Rodriguez</h4>
+              <p>Family Care Patient</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <p class="testimonial-text">"I was nervous about starting a weight loss program, but the team at Zintas Telehealth made me feel so comfortable. Down 28 pounds and feeling better than ever! The GLP-1 medication combined with their coaching is amazing."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">EC</div>
+            <div class="author-info">
+              <h4>Emily Chen</h4>
+              <p>Weight Loss Program Patient</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <p class="testimonial-text">"Finding telehealth that actually cares about you is rare. Zintas Telehealth exceeded all my expectations. Same-week appointments, transparent pricing, and results that speak for themselves. My whole family is now patients here!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MJ</div>
+            <div class="author-info">
+              <h4>Michael Johnson</h4>
+              <p>Long-term Patient</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <p class="testimonial-text">"The telehealth option is a game-changer for busy moms like me! I can check in with my doctor during nap time. The weight loss program is sustainable and the support is phenomenal. Lost 42 pounds!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">LT</div>
+            <div class="author-info">
+              <h4>Lisa Thompson</h4>
+              <p>Weight Loss Program Patient</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <p class="testimonial-text">"Professional, compassionate, and results-driven. Dr. Sintu took time to understand my health goals and created a personalized plan. Transparent pay-per-visit pricing made everything simple and stress-free. Couldn't be happier!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">DW</div>
+            <div class="author-info">
+              <h4>David Williams</h4>
+              <p>Weight Loss Program Patient</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonials-cta">
+        <p class="testimonials-cta-text">Join thousands of satisfied patients</p>
+        <a href="#booking" class="cta-btn">Start Your Journey Today</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs Section -->
+  <section class="faqs" id="faqs">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">Everything you need to know about Zintas Telehealth</p>
+      
+      <div class="faqs-grid">
+        <div class="faq-category">
+          <h3 class="faq-category-title">About Our Services</h3>
+          
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>What services does Zintas Telehealth offer?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We offer comprehensive telehealth services including urgent care ($45/visit), weight loss programs ($39-$75/visit), men's health ($45/visit), and women's health ($45/visit). Ages 5 and up for urgent care.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>What states do you serve?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We proudly serve patients in Arizona, Washington, Texas, New Mexico, and Colorado through our secure telehealth platform.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>Do you accept insurance?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Urgent care visits are $45, women's and men's health visits are $45, weight loss initial consultation is $39, and weight loss follow-up visits are $75.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-category">
+          <h3 class="faq-category-title">Booking & Appointments</h3>
+          
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>How do I book an appointment?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Booking is easy! Use our online booking system above to select your preferred date and time. Most appointments are available within the same week. All visits are telehealth (video) only.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>Do you offer telehealth appointments?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! All our consultations are conducted via secure video calls. This makes it convenient for you to meet with your provider from the comfort of your home or office.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>What if I need to cancel or reschedule?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>You can cancel or reschedule appointments through your patient portal or by calling us. We ask for at least 24 hours notice to avoid cancellation fees.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-category">
+          <h3 class="faq-category-title">Medications & Treatment</h3>
+          
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>What GLP-1 medications do you prescribe?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We prescribe FDA-approved GLP-1 medications including semaglutide (Wegovy®, Ozempic®) and tirzepatide (Zepbound®, Mounjaro®) based on clinical evaluation and your medical history. Your provider will determine the best option for you.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>How is medication delivered?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Medications are delivered to your home or sent to your preferred local pharmacy based on provider recommendations.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>Are there any side effects?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Common side effects include mild nausea, constipation, or digestive changes, which typically improve over time. Your provider will discuss all potential side effects during your consultation and provide guidance on managing them. We monitor you closely throughout treatment.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-category">
+          <h3 class="faq-category-title">Cost & Pricing</h3>
+          
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>How much does a consultation cost?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Pricing varies by service: Urgent Care - $45, Men's & Women's Health - $45, Weight Loss Initial Consultation - $39, Weight Loss Follow-up - $75. No subscriptions required.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>Do you require a subscription?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No subscriptions required. We offer simple pay-per-visit pricing. You only pay when you need care.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faqs-cta">
+        <p class="faqs-cta-text">Still have questions?</p>
+        <a href="mailto:info@zintastelehealth.com" class="cta-btn-secondary">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section id="booking" class="booking" aria-label="Booking">
+    <div class="container">
+      <h2 class="section-title">Book an Appointment</h2>
+      <p class="section-subtitle">Schedule your consultation today</p>
+      <div style="max-width: 1000px; margin: 20px auto 0;">
+        <iframe width="100%" height="1000" src="https://ehr.charmtracker.com/publicCal.sas?method=getCal&digest=61a3d1388e629a0b507e2b5de3368812e9d19920c15011bfde14e5896981f1d24b5cb98c3566431f670f7d7031423bf4a0ae868b6eb0918a" style="overflow:hidden;" frameborder="0"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Left column: brand + quick links + social -->
+        <div class="footer-section footer-brand">
+          <div class="footer-brand-top">
+            <img src="logo.png" alt="Zintas Telehealth" class="footer-logo" />
+            <div>
+              <h4 class="footer-brand-title">Zintas Telehealth</h4>
+              <p class="footer-brand-subtitle">Quality healthcare from anywhere.</p>
+            </div>
+          </div>
+          
+          <div class="footer-quick-links" aria-label="Quick links">
+            <a href="https://phr.charmtracker.com/login.sas?FACILITY_ID=6da761489431a9742beb34b33845845661a3d1388e629a0b98ee2e5ce9d5cc8ac81b440bc8a53a00" target="_blank" rel="noopener noreferrer">Patient Portal</a>
+            <span>•</span>
+            <a href="#faqs">FAQs</a>
+          </div>
+          
+          <div class="footer-social" aria-label="Social links">
+            <a href="https://www.instagram.com/zintasclinic" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="0.9"></circle>
+              </svg>
+            </a>
+            <a href="mailto:info@zintastelehealth.com" class="social-link" aria-label="Email">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <polyline points="4 7 12 12 20 7"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right column: We Serve + contact items -->
+        <div class="footer-section">
+          <h4>We Serve</h4>
+          <ul class="footer-contact">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 21s-6-4.35-6-10a6 6 0 0112 0c0 5.65-6 10-6 10z"></path>
+                <circle cx="12" cy="11" r="2.5"></circle>
+              </svg>
+              <span>Arizona, Washington, Texas, New Mexico, Colorado</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <polyline points="4 7 12 12 20 7"></polyline>
+              </svg>
+              <span>info@zintastelehealth.com</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="4" y="4" width="16" height="16" rx="3"></rect>
+                <path d="M8 10h8M8 14h5"></path>
+              </svg>
+              <span>100% Telehealth – No Physical Office</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© Zintas Telehealth. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#privacy">Privacy Policy</a>
+          <span>•</span>
+          <a href="#terms">Terms of Service</a>
+          <span>•</span>
+          <a href="#hipaa">HIPAA Notice</a>
+          <span>•</span>
+          <a href="#telehealth-disclaimers">Telehealth Disclaimers</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Disclaimers Modal -->
+  <div id="disclaimersModal" class="modal" style="display: none;">
+    <div class="modal-overlay" onclick="closeDisclaimersModal()"></div>
+    <div class="modal-content" style="max-width: 900px; max-height: 90vh; overflow-y: auto;">
+      <button class="modal-close" onclick="closeDisclaimersModal()">×</button>
+      
+      <div style="padding: 40px;">
+        <h2 style="color: #1a1a1a; font-size: 28px; margin-bottom: 30px; text-align: center; font-weight: 600;">Telehealth Disclaimers</h2>
+        
+        <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #4F46E5;">
+          <h3 style="color: #1a1a1a; font-size: 18px; margin-bottom: 12px; font-weight: 600;">General Telehealth Disclaimer</h3>
+          <p style="color: #666; line-height: 1.8; margin-bottom: 10px; font-size: 14px;">Telehealth services allow you to receive medical care through secure video, phone, or electronic communication. By participating in a telehealth appointment, you acknowledge and understand that:</p>
+          <ul style="color: #666; line-height: 1.8; margin-left: 20px; font-size: 14px;">
+            <li style="margin-bottom: 6px;">Telehealth is not a substitute for in-person medical care when a physical examination is required.</li>
+            <li style="margin-bottom: 6px;">Your provider may determine that an in-person visit is necessary for diagnosis or treatment.</li>
+            <li style="margin-bottom: 6px;">Technical issues such as poor internet connection or device malfunction may affect your session.</li>
+            <li>All telehealth sessions will follow privacy and confidentiality standards required by law (e.g., HIPAA), but no technology can guarantee 100% security.</li>
+          </ul>
+        </div>
+
+        <div style="background: #fee; padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #dc2626;">
+          <h3 style="color: #dc2626; font-size: 18px; margin-bottom: 12px; font-weight: 600;">⚠️ Emergency Services Disclaimer</h3>
+          <p style="color: #666; line-height: 1.8; margin-bottom: 10px; font-weight: 600; font-size: 14px;">Telehealth services are not for medical emergencies.</p>
+          <p style="color: #666; line-height: 1.8; font-size: 14px;">If you are experiencing a medical emergency—such as chest pain, difficulty breathing, severe bleeding, loss of consciousness, or suicidal thoughts—<strong>call 911 or go to the nearest emergency department immediately.</strong></p>
+        </div>
+
+        <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #4F46E5;">
+          <h3 style="color: #1a1a1a; font-size: 18px; margin-bottom: 12px; font-weight: 600;">Limitations of Telehealth</h3>
+          <p style="color: #666; line-height: 1.8; margin-bottom: 10px; font-size: 14px;">Telehealth has limitations, including:</p>
+          <ul style="color: #666; line-height: 1.8; margin-left: 20px; font-size: 14px;">
+            <li style="margin-bottom: 6px;">Some conditions cannot be fully assessed without a physical exam, lab tests, imaging, or procedures.</li>
+            <li style="margin-bottom: 6px;">Prescriptions and treatment plans may be limited based on your provider's judgment.</li>
+            <li>Not all medications can be prescribed through telehealth due to federal and state laws.</li>
+          </ul>
+        </div>
+
+        <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #4F46E5;">
+          <h3 style="color: #1a1a1a; font-size: 18px; margin-bottom: 12px; font-weight: 600;">Financial and Billing Disclaimer</h3>
+          <ul style="color: #666; line-height: 1.8; margin-left: 20px; font-size: 14px;">
+            <li style="margin-bottom: 6px;">Telehealth visits may be billed to your insurance when applicable.</li>
+            <li style="margin-bottom: 6px;">You are responsible for any copayments, deductibles, or non-covered services.</li>
+            <li>It is your responsibility to verify telehealth coverage with your insurance provider.</li>
+          </ul>
+        </div>
+
+        <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #4F46E5;">
+          <h3 style="color: #1a1a1a; font-size: 18px; margin-bottom: 12px; font-weight: 600;">Privacy and Confidentiality Disclaimer</h3>
+          <p style="color: #666; line-height: 1.8; margin-bottom: 10px; font-size: 14px;">Your telehealth visit uses secure, encrypted technology. While your clinic takes all reasonable steps to protect your information:</p>
+          <ul style="color: #666; line-height: 1.8; margin-left: 20px; font-size: 14px;">
+            <li style="margin-bottom: 6px;">There is a small risk of unauthorized access due to the nature of electronic communication.</li>
+            <li style="margin-bottom: 6px;">You should participate from a private location where your personal information cannot be overheard or seen by others.</li>
+            <li>You are responsible for the privacy of your own device and internet connection.</li>
+          </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px; padding: 20px; background: #fffbeb; border-radius: 8px;">
+          <p style="color: #666; font-size: 13px; line-height: 1.6; margin: 0;">By using our telehealth services, you acknowledge that you have read, understood, and agree to these disclaimers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Privacy Policy Modal -->
+  <div id="privacyModal" class="modal" style="display: none;">
+    <div class="modal-overlay" onclick="closePrivacyModal()"></div>
+    <div class="modal-content" style="max-width: 900px; max-height: 90vh; overflow-y: auto;">
+      <button class="modal-close" onclick="closePrivacyModal()">×</button>
+      <div style="padding: 40px;">
+        <h2 style="color: #1a1a1a; font-size: 28px; margin-bottom: 20px; text-align: center; font-weight: 600;">Privacy Policy</h2>
+        <p style="color: #666; line-height: 1.8; font-size: 14px; margin-bottom: 20px; text-align: center;">Last Updated: December 2025</p>
+        
+        <div style="color: #666; line-height: 1.8; font-size: 14px;">
+          <h3 style="color: #1a1a1a; font-size: 18px; margin: 24px 0 12px; font-weight: 600;">Introduction</h3>
+          <p style="margin-bottom: 16px;">Zintas Family Clinic ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
+          
+          <h3 style="color: #1a1a1a; font-size: 18px; margin: 24px 0 12px; font-weight: 600;">Information We Collect</h3>
+          <p style="margin-bottom: 12px;">We collect information that you provide directly to us, including:</p>
+          <ul style="margin-left: 20px; margin-bottom: 16px;">
+            <li style="margin-bottom: 8px;">Personal identification information (name, email, phone number, address)</li>
+            <li style="margin-bottom: 8px;">Medical information and health records</li>
+            <li style="margin-bottom: 8px;">Insurance information</li>
+            <li style="margin-bottom: 8px;">Payment information</li>
+            <li>Usage data and analytics</li>
+          </ul>
+          
+          <h3 style="color: #1a1a1a; font-size: 18px; margin: 24px 0 12px; font-weight: 600;">How We Use Your Information</h3>
+          <p style="margin-bottom: 12px;">We use the information we collect to:</p>
+          <ul style="margin-left: 20px; margin-bottom: 16px;">
+            <li style="margin-bottom: 8px;">Provide, maintain, and improve our healthcare services</li>
+            <li style="margin-bottom: 8px;">Process appointments and manage your care</li>
+            <li style="margin-bottom: 8px;">Communicate with you about your care and services</li>
+            <li style="margin-bottom: 8px;">Process payments and billing</li>
+            <li>Comply with legal obligations</li>
+          </ul>
+          
+          <h3 style="color: #1a1a1a; font-size: 18px; margin: 24px 0 12px; font-weight: 600;">HIPAA Compliance</h3>
+          <p style="margin-bottom: 16px;">We comply with the Health Insurance Portability and Accountability Act (HIPAA) and protect your health information according to federal and state privacy laws.</p>
+          
+          <h3 style="color: #1a1a1a; font-size: 18px; margin: 24px 0 12px; font-weight: 600;">Data Security</h3>
+          <p style="margin-bottom: 16px;">We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+          
+          <h3 style="color: #1a1a1a; font-size: 18px; margin: 24px 0 12px; font-weight: 600;">Contact Us</h3>
+          <p style="margin-bottom: 8px;">If you have questions about this Privacy Policy, please contact us at:</p>
+          <p style="margin-bottom: 4px;"><strong>Email:</strong> info@zintasclinic.com</p>
+          <p style="margin-bottom: 4px;"><strong>Phone:</strong> (555) 123-4567</p>
+          <p><strong>Address:</strong> 123 Healthcare St, City, State 12345</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Terms of Service Modal -->
+  <div id="termsModal" class="modal" style="display: none;">
+    <div class="modal-overlay" onclick="closeTermsModal()"></div>
+    <div class="modal-content" style="max-width: 900px; max-height: 90vh; overflow-y: auto;">
+      <button class="modal-close" onclick="closeTermsModal()">×</button>
+      <div style="padding: 40px;">
+        <h2 style="color: #1a1a1a; font-size: 28px; margin-bottom: 20px; text-align: center; font-weight: 600;">Terms of Service</h2>
+        <p style="color: #666; line-height: 1.8; font-size: 14px; margin-bottom: 20px; text-align: center;">Last Updated: December 2025</p>
+        
+        <div style="color: #666; line-height: 1.8; font-size: 14px;">
+          <h3 style="color: #1a1a1a; font-size: 18px; margin: 24px 0 12px; font-weight: 600;">Acceptance of Terms</h3>
+          <p style="margin-bottom: 16px;">By accessing and using Zintas Family Clinic's services, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
+          
+          <h3 style="color: #1a1a1a; font-size: 18px; margin: 24px 0 12px; font-weight: 600;">Services Provided</h3>
+          <p style="margin-bottom: 16px;">Zintas Family Clinic provides telehealth and weight loss program services. Our services are for informational and medical care purposes only and should not replace emergency medical treatment.</p>
+          
+          <h3 style="color: #1a1a1a; font-size: 18px; margin: 24px 0 12px; font-weight: 600;">Patient Responsibilities</h3>
+          <p style="margin-bottom: 12px;">As a patient, you agree to:</p>
+          <ul style="margin-left: 20px; margin-bottom: 16px;">
+            <li style="margin-bottom: 8px;">Provide accurate and complete health information</li>
+            <li style="margin-bottom: 8px;">Attend scheduled appointments or cancel with appropriate notice</li>
+            <li style="margin-bottom: 8px;">Follow prescribed treatment plans</li>
+            <li style="margin-bottom: 8px;">Pay for services rendered according to our payment terms</li>
+            <li>Keep your login credentials confidential</li>
+          </ul>
+          
+          <h3 style="color: #1a1a1a; font-size: 18px; margin: 24px 0 12px; font-weight: 600;">Cancellation Policy</h3>
+          <p style="margin-bottom: 16px;">Appointments must be cancelled at least 24 hours in advance to avoid cancellation fees. Late cancellations or no-shows may result in charges.</p>
+          
+          <h3 style="color: #1a1a1a; font-size: 18px; margin: 24px 0 12px; font-weight: 600;">Payment Terms</h3>
+          <p style="margin-bottom: 16px;">Payment is due at the time of service. We accept major credit cards and insurance when applicable. You are responsible for any copayments, deductibles, or non-covered services.</p>
+          
+          <h3 style="color: #1a1a1a; font-size: 18px; margin: 24px 0 12px; font-weight: 600;">Limitation of Liability</h3>
+          <p style="margin-bottom: 16px;">Our services are provided "as is" without warranties. We are not liable for any indirect, incidental, or consequential damages arising from the use of our services.</p>
+          
+          <h3 style="color: #1a1a1a; font-size: 18px; margin: 24px 0 12px; font-weight: 600;">Contact Us</h3>
+          <p style="margin-bottom: 8px;">Questions about these Terms? Contact us at:</p>
+          <p style="margin-bottom: 4px;"><strong>Email:</strong> info@zintasclinic.com</p>
+          <p style="margin-bottom: 4px;"><strong>Phone:</strong> (555) 123-4567</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HIPAA Notice Modal -->
+  <div id="hipaaModal" class="modal" style="display: none;">
+    <div class="modal-overlay" onclick="closeHipaaModal()"></div>
+    <div class="modal-content" style="max-width: 900px; max-height: 90vh; overflow-y: auto;">
+      <button class="modal-close" onclick="closeHipaaModal()">×</button>
+      <div style="padding: 40px;">
+        <h2 style="color: #1a1a1a; font-size: 28px; margin-bottom: 20px; text-align: center; font-weight: 600;">HIPAA Notice of Privacy Practices</h2>
+        <p style="color: #666; line-height: 1.8; font-size: 14px; margin-bottom: 20px; text-align: center;">Effective Date: December 2025</p>
+        
+        <div style="color: #666; line-height: 1.8; font-size: 14px;">
+          <h3 style="color: #1a1a1a; font-size: 18px; margin: 24px 0 12px; font-weight: 600;">Your Rights</h3>
+          <p style="margin-bottom: 12px;">Under HIPAA, you have the right to:</p>
+          <ul style="margin-left: 20px; margin-bottom: 16px;">
+            <li style="margin-bottom: 8px;">Access and obtain a copy of your health records</li>
+            <li style="margin-bottom: 8px;">Request corrections to your health information</li>
+            <li style="margin-bottom: 8px;">Request restrictions on how we use or disclose your information</li>
+            <li style="margin-bottom: 8px;">Request confidential communications</li>
+            <li style="margin-bottom: 8px;">Receive an accounting of disclosures</li>
+            <li>File a complaint if you believe your privacy rights have been violated</li>
+          </ul>
+          
+          <h3 style="color: #1a1a1a; font-size: 18px; margin: 24px 0 12px; font-weight: 600;">How We Use Your Health Information</h3>
+          <p style="margin-bottom: 12px;">We may use and disclose your protected health information (PHI) for:</p>
+          <ul style="margin-left: 20px; margin-bottom: 16px;">
+            <li style="margin-bottom: 8px;"><strong>Treatment:</strong> To provide, coordinate, or manage your healthcare</li>
+            <li style="margin-bottom: 8px;"><strong>Payment:</strong> To obtain payment for services provided</li>
+            <li style="margin-bottom: 8px;"><strong>Healthcare Operations:</strong> To support clinic operations and quality improvement</li>
+            <li>Other uses as required or permitted by law</li>
+          </ul>
+          
+          <h3 style="color: #1a1a1a; font-size: 18px; margin: 24px 0 12px; font-weight: 600;">Your Authorization</h3>
+          <p style="margin-bottom: 16px;">For uses and disclosures not covered by this notice or permitted by law, we will obtain your written authorization. You may revoke such authorization at any time in writing.</p>
+          
+          <h3 style="color: #1a1a1a; font-size: 18px; margin: 24px 0 12px; font-weight: 600;">Security Measures</h3>
+          <p style="margin-bottom: 16px;">We maintain physical, electronic, and procedural safeguards to protect your health information in accordance with HIPAA security standards.</p>
+          
+          <h3 style="color: #1a1a1a; font-size: 18px; margin: 24px 0 12px; font-weight: 600;">Breach Notification</h3>
+          <p style="margin-bottom: 16px;">In the event of a breach of your unsecured protected health information, we will notify you as required by law.</p>
+          
+          <h3 style="color: #1a1a1a; font-size: 18px; margin: 24px 0 12px; font-weight: 600;">Questions or Complaints</h3>
+          <p style="margin-bottom: 8px;">If you have questions or wish to file a complaint about our privacy practices, contact:</p>
+          <p style="margin-bottom: 4px;"><strong>Privacy Officer</strong></p>
+          <p style="margin-bottom: 4px;"><strong>Email:</strong> privacy@zintasclinic.com</p>
+          <p style="margin-bottom: 4px;"><strong>Phone:</strong> (555) 123-4567</p>
+          <p style="margin-bottom: 16px;"><strong>Address:</strong> 123 Healthcare St, City, State 12345</p>
+          <p>You may also file a complaint with the U.S. Department of Health and Human Services.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js?v=20251207051500"></script>
+  <script>
+    function toggleDetails() {
+      const details = document.getElementById('details');
+      const btn = document.getElementById('toggleDetailsBtn');
+      const isHidden = details.style.display === 'none' || details.style.display === '';
+      details.style.display = isHidden ? 'block' : 'none';
+      btn.setAttribute('aria-expanded', String(isHidden));
+      btn.textContent = isHidden ? 'Show less' : 'Show more';
+      if (isHidden) {
+        // Scroll the expanded section into view with some offset
+        setTimeout(() => {
+          details.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 50);
+      }
+    }
+
+    function toggleCardDetails(btn) {
+      const card = btn.closest('.service-detail-card');
+      if (!card) return;
+      const details = card.querySelector('.service-details');
+      if (!details) return;
+      const isHidden = details.style.display === 'none' || details.style.display === '';
+      details.style.display = isHidden ? 'block' : 'none';
+      btn.setAttribute('aria-expanded', String(isHidden));
+      btn.textContent = isHidden ? 'Hide details' : 'Show details';
+      if (isHidden) {
+        setTimeout(() => {
+          card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 50);
+      }
+    }
+  </script>
+</body>
+</html>
