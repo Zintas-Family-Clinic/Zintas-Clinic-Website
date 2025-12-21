@@ -1,7 +1,7 @@
 # Netlify configuration for Zintas Telehealth (static site)
 
 [build]
-  publish = "frontend"
+  publish = "."
   command = ""
 
 # Optional: force HTTPS and basic security headers
