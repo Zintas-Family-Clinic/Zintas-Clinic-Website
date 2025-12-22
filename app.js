@@ -495,3 +495,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// ========================================
+// Generic modal close handlers (X button & overlay)
+// ========================================
+document.addEventListener('DOMContentLoaded', function() {
+  // Close when clicking any .modal-close button
+  document.querySelectorAll('.modal .modal-close').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const modal = btn.closest('.modal');
+      if (!modal) return;
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Close when clicking any overlay
+  document.querySelectorAll('.modal .modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+      e.preventDefault();
+      const modal = overlay.closest('.modal');
+      if (!modal) return;
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+  });
+});
