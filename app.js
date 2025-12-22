@@ -446,3 +446,44 @@ function toggleFAQ(button) {
     faqItem.classList.add('active');
   }
 }
+
+// ========================================
+// Footer Modal Link Event Listeners
+// ========================================
+document.addEventListener('DOMContentLoaded', function() {
+  // Privacy Policy link
+  const privacyLinks = document.querySelectorAll('a[href="#privacy"]');
+  privacyLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      openPrivacyModal();
+    });
+  });
+
+  // Terms of Service link
+  const termsLinks = document.querySelectorAll('a[href="#terms"]');
+  termsLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      openTermsModal();
+    });
+  });
+
+  // HIPAA Notice link
+  const hipaaLinks = document.querySelectorAll('a[href="#hipaa"]');
+  hipaaLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      openHipaaModal();
+    });
+  });
+
+  // Telehealth Disclaimers link
+  const disclaimerLinks = document.querySelectorAll('a[href="#telehealth-disclaimers"]');
+  disclaimerLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      openDisclaimersModal();
+    });
+  });
+});
