@@ -368,7 +368,7 @@ function closeDisclaimersModal() {
   const modal = document.getElementById('disclaimersModal');
   if (modal) {
     modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = '';
   }
 }
 
@@ -387,7 +387,7 @@ function closePrivacyModal() {
   const modal = document.getElementById('privacyModal');
   if (modal) {
     modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = '';
   }
 }
 
@@ -406,7 +406,7 @@ function closeTermsModal() {
   const modal = document.getElementById('termsModal');
   if (modal) {
     modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = '';
   }
 }
 
@@ -425,7 +425,7 @@ function closeHipaaModal() {
   const modal = document.getElementById('hipaaModal');
   if (modal) {
     modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = '';
   }
 }
 
