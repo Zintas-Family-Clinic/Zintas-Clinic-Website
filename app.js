@@ -357,6 +357,7 @@ document.addEventListener('keydown', function(e) {
 // Disclaimers Modal Functions
 // ========================================
 function openDisclaimersModal() {
+  console.log('Opening disclaimers modal');
   const modal = document.getElementById('disclaimersModal');
   if (modal) {
     modal.style.display = 'flex';
@@ -365,6 +366,7 @@ function openDisclaimersModal() {
 }
 
 function closeDisclaimersModal() {
+  console.log('Closing disclaimers modal');
   const modal = document.getElementById('disclaimersModal');
   if (modal) {
     modal.style.display = 'none';
@@ -376,6 +378,7 @@ function closeDisclaimersModal() {
 // Privacy Policy Modal Functions
 // ========================================
 function openPrivacyModal() {
+  console.log('Opening privacy modal');
   const modal = document.getElementById('privacyModal');
   if (modal) {
     modal.style.display = 'flex';
@@ -384,6 +387,7 @@ function openPrivacyModal() {
 }
 
 function closePrivacyModal() {
+  console.log('Closing privacy modal');
   const modal = document.getElementById('privacyModal');
   if (modal) {
     modal.style.display = 'none';
@@ -395,6 +399,7 @@ function closePrivacyModal() {
 // Terms of Service Modal Functions
 // ========================================
 function openTermsModal() {
+  console.log('Opening terms modal');
   const modal = document.getElementById('termsModal');
   if (modal) {
     modal.style.display = 'flex';
@@ -403,6 +408,7 @@ function openTermsModal() {
 }
 
 function closeTermsModal() {
+  console.log('Closing terms modal');
   const modal = document.getElementById('termsModal');
   if (modal) {
     modal.style.display = 'none';
@@ -414,6 +420,7 @@ function closeTermsModal() {
 // HIPAA Notice Modal Functions
 // ========================================
 function openHipaaModal() {
+  console.log('Opening HIPAA modal');
   const modal = document.getElementById('hipaaModal');
   if (modal) {
     modal.style.display = 'flex';
@@ -422,6 +429,7 @@ function openHipaaModal() {
 }
 
 function closeHipaaModal() {
+  console.log('Closing HIPAA modal');
   const modal = document.getElementById('hipaaModal');
   if (modal) {
     modal.style.display = 'none';
