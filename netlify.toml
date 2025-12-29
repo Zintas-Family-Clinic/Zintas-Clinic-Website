@@ -1,15 +1,50 @@
-# Netlify configuration for Zintas Telehealth (static site)
+# Netlify config — Zintas Telehealth
 
 [build]
   publish = "."
   command = ""
 
-# Optional: force HTTPS and basic security headers
+# ----------------------------
+# Redirects (force HTTPS + canonical domain)
+# ----------------------------
+
+# http -> https (root domain)
+[[redirects]]
+  from = "http://zintasclinic.com/*"
+  to = "https://zintasclinic.com/:splat"
+  status = 301
+  force = true
+
+# http -> https (www)
+[[redirects]]
+  from = "http://www.zintasclinic.com/*"
+  to = "https://zintasclinic.com/:splat"
+  status = 301
+  force = true
+
+# https www -> https root (canonical)
+[[redirects]]
+  from = "https://www.zintasclinic.com/*"
+  to = "https://zintasclinic.com/:splat"
+  status = 301
+  force = true
+
+# ----------------------------
+# Headers (apply to ALL paths)
+# ----------------------------
 [[headers]]
-  for = "/"
+  for = "/*"
   [headers.values]
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
     Referrer-Policy = "no-referrer-when-downgrade"
-    Content-Security-Policy = "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; frame-src https://ehr.charmtracker.com https://phr.charmtracker.com;"
+    X-XSS-Protection = "1; mode=block"
+    Content-Security-Policy = """
+default-src 'self';
+img-src 'self' data: https:;
+style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+font-src 'self' https://fonts.gstatic.com;
+script-src 'self';
+frame-src https://ehr.charmtracker.com https://phr.charmtracker.com;
+"""
