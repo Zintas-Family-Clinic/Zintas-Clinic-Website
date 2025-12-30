@@ -39,12 +39,3 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
     Referrer-Policy = "no-referrer-when-downgrade"
-    X-XSS-Protection = "1; mode=block"
-    Content-Security-Policy = """
-default-src 'self';
-img-src 'self' data: https:;
-style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-font-src 'self' https://fonts.gstatic.com;
-script-src 'self' 'unsafe-inline';
-frame-src https://ehr.charmtracker.com https://phr.charmtracker.com;
-"""
